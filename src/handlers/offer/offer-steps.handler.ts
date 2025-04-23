@@ -10,6 +10,7 @@ export const offerStepsHandler = async (ctx: MyContext) => {
 		if (offerStep === 'message') {
 			ctx.session.offerStep = 'confirmMessage';
 			await ctx.reply(msg!);
+			ctx.session.offer = msg!;
 			return await ctx.reply(ctx.t('askOfferConfirm'), {
 				reply_markup: {
 					inline_keyboard: new InlineKeyboard([

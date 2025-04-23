@@ -10,6 +10,12 @@
 		"rootDir": "./src",
 		"moduleResolution": "NodeNext"
 	},
+	"ts-node": {
+		"transpileOnly": true,
+		"files": true
+	},
 	"include": ["src/**/*.ts"],
-	"exclude": ["node_modules"]
+	"exclude": ["node_modules"],
+	"resolveJsonModule": true,
+	"allowSyntheticDefaultImports": true
 }

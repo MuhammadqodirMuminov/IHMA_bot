@@ -3,8 +3,8 @@ import { UserRoles } from '../types/enum';
 
 const userSchema = new mongoose.Schema(
 	{
-		chatId: { type: Number, required: true, unique: true },
-		role: { type: String, enum: UserRoles, required: true },
+		chatId: { type: Number, required: true, unique: true, index: true },
+		role: { type: String, enum: UserRoles, required: true, index: true },
 		fullName: String,
 		phone: String,
 		district: String,

@@ -11,7 +11,8 @@ export interface SessionData {
 		district?: string;
 		address?: string;
 	};
-	offerStep?: 'message' | 'confirmMessage' | null
+	offerStep?: 'message' | 'confirmMessage' | 'addAnnother' | null;
+	offer: string | null;
 }
 
 function initialSession(): SessionData {
@@ -19,6 +20,7 @@ function initialSession(): SessionData {
 		step: 'idle',
 		currentFlow: 'language',
 		user: {},
+		offer: null,
 	};
 }
 

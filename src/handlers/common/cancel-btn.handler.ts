@@ -5,7 +5,7 @@ export const cancelHandler = async (ctx: MyContext) => {
 	const flow = ctx.session.currentFlow;
 
 	if (flow === 'offer') {
-		if (offerStep === 'message') {
+		if (offerStep === 'message' || offerStep === 'addAnnother') {
 			ctx.session.offerStep = null;
 			ctx.session.currentFlow = 'main';
 

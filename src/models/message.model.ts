@@ -1,11 +1,17 @@
 import mongoose, { InferSchemaType } from 'mongoose';
+import { MessageStatus, MessageType } from '../types/enum';
 
 const messageSchema = new mongoose.Schema(
 	{
-		user: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+		user: { type: mongoose.Schema.Types.ObjectId, ref: 'User', index: true },
 		content: String,
-		status: { type: String, enum: ['pending', 'reviewed'], default: 'pending' },
-		createdAt: { type: Date, default: Date.now },
+		status: {
+			type: String,
+			enum: MessageStatus,
+			default: MessageStatus.PENDING,
+			index: true,
+		},
+		type: { type: String, enum: MessageType, required: true, index: true },
 	},
 	{ versionKey: false, timestamps: true },
 );

@@ -47,3 +47,4 @@ cancelBtn = Bekor qilish
 askOfferConfirm = Xabaringiz qabul qilindi! Tasdiqlaysizmi?
 confirmOfferBtn = ✅ Tasdiqlash
 reAskOfferBtn = ♻️ Qayta kiritish
+sendedOffer = Murojaatingiz haqida mas'ullarimiz ogohlantirildi! Shu yo'nalishda yana habar yuborasizmi?
