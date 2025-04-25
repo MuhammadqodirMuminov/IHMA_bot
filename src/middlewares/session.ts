@@ -4,7 +4,7 @@ import { Context, SessionFlavor, session as grammYSession } from 'grammy';
 export interface SessionData {
 	chatId?: number;
 	step: 'idle' | 'fullName' | 'phone' | 'district' | 'address' | 'confirm' | null;
-	currentFlow: 'language' | 'registration' | 'profile' | 'main' | 'offer' | null;
+	currentFlow: 'language' | 'registration' | 'profile' | 'main' | 'offer' | 'report' | null;
 	user: {
 		fullName?: string;
 		phone?: string;
@@ -12,7 +12,9 @@ export interface SessionData {
 		address?: string;
 	};
 	offerStep?: 'message' | 'confirmMessage' | 'addAnnother' | null;
+	problemStep?: 'preferances' | 'message' | 'confirmMessage' | null;
 	offer: string | null;
+	report: string | null;
 }
 
 function initialSession(): SessionData {
@@ -21,6 +23,7 @@ function initialSession(): SessionData {
 		currentFlow: 'language',
 		user: {},
 		offer: null,
+		report: null,
 	};
 }
 

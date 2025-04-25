@@ -16,6 +16,7 @@ export const setLanguageHandler = async (ctx: MyContext, lang: string = 'uz') =>
 
 	keybord.row({ text: ctx.t('back') });
 	ctx.session.currentFlow = 'registration';
+	ctx.session.step = 'idle';
 
 	await ctx.reply(ctx.t('selectedLang'), {
 		reply_markup: {

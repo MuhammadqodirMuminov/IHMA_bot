@@ -2,6 +2,8 @@ import { MyContext } from '../../middlewares/session';
 import { setLanguageHandler } from '../language/set-lang.handler';
 import { offerStepsHandler } from '../offer/offer-steps.handler';
 import { offerHandler } from '../offer/offer.handler';
+import { problemStepsHandler } from '../problem/problem-steps.handler';
+import { problemhandler } from '../problem/problem.handler';
 import { profileHandler } from '../profile/profile.handler';
 import { confirmUserHandler } from '../registration/confirm.handler';
 import { registrationHandler } from '../registration/register.handler';
@@ -31,6 +33,8 @@ export const globalTextHandler = async (ctx: MyContext) => {
 		return await profileHandler(ctx);
 	} else if (msg === ctx.t('offerBtn')) {
 		return await offerHandler(ctx);
+	} else if (msg === ctx.t('problemBtn')) {
+		return await problemhandler(ctx);
 	} else if (msg === ctx.t('cancelBtn')) {
 		return await cancelHandler(ctx);
 	}
@@ -38,4 +42,5 @@ export const globalTextHandler = async (ctx: MyContext) => {
 	await BackButtonHandler(ctx);
 	await stepsHandler(ctx);
 	await offerStepsHandler(ctx);
+	await problemStepsHandler(ctx);
 };
